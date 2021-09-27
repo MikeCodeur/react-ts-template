@@ -3,9 +3,7 @@ import {AuthAppTemplate} from '../components/templates/AuthAppTemplate'
 
 const AccountPage = () => {
   return (
-    <AuthAppTemplate>
-      <h1>Page de Reglage du compte</h1>
-    </AuthAppTemplate>
+    <h1>Page de Reglage du compte</h1>
   )
 }
 export {AccountPage}

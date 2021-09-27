@@ -1,15 +1,18 @@
 import {AppBar} from '../AppBar'
 import {Footer} from '../Footer'
+import { Container } from '../ui'
 
-const AppTemplate = (props: any) => {
+export const  AppTemplate = (props: any) => {
   const {children} = props
   return (
     <>
-      <AppBar isLogged={false}></AppBar>
-      {children}
-      <Footer></Footer>
+      <AppBar/>
+        <Container>
+          {children}
+        </Container>
+      <Footer/>
     </>
   )
 }
 
-export {AppTemplate}
+export default AppTemplate;

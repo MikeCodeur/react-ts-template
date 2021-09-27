@@ -1,15 +1,18 @@
 import {AppBar} from '../AppBar'
 import {Footer} from '../Footer'
+import { Container } from '../ui';
 
-const AuthAppTemplate = (props: any) => {
+export const AuthAppTemplate = (props: any) => {
   const {children} = props
   return (
     <>
-      <AppBar isLogged={true}></AppBar>
-      {children}
-      <Footer></Footer>
+      <AppBar/>
+        <Container>
+          {children}
+        </Container>
+      <Footer/>
     </>
   )
 }
 
-export {AuthAppTemplate}
+export default AuthAppTemplate;

@@ -1,7 +1,7 @@
 
 import {Link} from 'react-router-dom'
 
-function Error404() {
+export const  Error404 = () => {
   const imageUrl = '/images/bg-lost-in-space.png'
   return (
     <div style={{
@@ -39,4 +39,3 @@ function Error404() {
   )
 }
 
-export default Error404
