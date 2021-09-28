@@ -1,39 +1,41 @@
 import { Text as ChakraText } from "@chakra-ui/react"
-import { css } from '@emotion/react'
+import {useTheme, css } from '@emotion/react'
 import styled from '@emotion/styled';
-
+import { useThemeStore } from '../../commons/store';
 
 // Surcharge du Compo Text de Chakra avec @emotion
 const CustomText = styled(ChakraText)`
 ${props => {
+   const { theme } = useThemeStore();
     switch (props.variant) {
       case 'h1':
         return css`
           font-size: 25px;
           font-weight: 700;
-          color: red;
+          color: ${props?.colorScheme || theme?.colorScheme};
         `;
       case 'h2':
         return css`
           font-size: 22px;
           font-weight: 600;
-          color: blue;
+          color: ${props?.colorScheme || theme?.colorScheme};
         `;
       case 'h3':
         return css`
           font-size: 16px;
           font-weight: 600;
-          color: green;
+          color: ${props?.colorScheme || theme?.colorScheme};
         `;
       case 'disabled':
         return css`
           font-size: 14px;
-          color: #819cad;
+          color: ${props?.colorScheme || "#819cad"};
         `;
       case 'p':
       default:
         return css`
           font-size: 14px;
+          color: ${props?.colorScheme || theme?.colorScheme};
         `;
     }
   }}
@@ -44,7 +46,7 @@ export const Text = ({
 }) => {
   
   return(
-    <CustomText {...rest}>
+    <CustomText   {...rest}>
 
     </CustomText>
   )
