@@ -1,7 +1,7 @@
 
-//https://codesandbox.io/s/vspoe?file=/src/Zustand/zustandStore.tsx
+import create from 'zustand';
+import { devtools } from 'zustand/middleware';
 
-// TODO TU MET LES TYPES DE PROPRE PLUS TARD C EXEMPLE 
 type RoleType = 'COACH' | 'STUDENT';
 type EUserLogged = {
     email:string;
@@ -29,4 +29,4 @@ const store = (set: any) => ({
   resetAuthStore: (state: Partial<State>) => set({ ...initialStates, ...state }),
 });
 
-//export const useAuthStore = create<State>(devtools<State>(store, 'Auth'));
+export const useAuthStore = create<State>(devtools<State>(store, 'Auth'));

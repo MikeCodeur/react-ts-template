@@ -1,6 +1,12 @@
-import styled from '@emotion/styled'
+import { Button as ChakraButton } from "@chakra-ui/react"
 
-const Button = styled.button`
-  color: hotpink;
-`
-export default Button
+export const Button = ({
+  ...rest
+}) => {
+  return(
+    <ChakraButton {...rest}>
+
+    </ChakraButton>
+  )
+}
+export default Button;

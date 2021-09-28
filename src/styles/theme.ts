@@ -1,61 +1,75 @@
 // theme.js
-
-    const colors = {
-      black: '#000e1a',
-      white: '#fff',
-      blue: '#007ce0',
-      navy: '#004175',
-      primary: {
-        lighter: '#eef6fa',
-        light: '#819CAD',
-        default: '#00ABEF',
-        dark: '#004269',
-      },
-      error: {
-        default: '#f24750',
-        dark: '#f24750',
-        light: '#fdeeef',
-        lighter: '#fdeeef',
-      },
-    
-      warning: { default: '#FF8C4C' },
-      success: { default: '#1BC773' },
-      grey: {
-        default: '#819CAD',
-      },
-    }
-
-    const fontSize = {
-        small: 11,
-        regular: 14,
-        xlarge: 20,
-      };
-      
-      const padding = {
-        regular: 20,
-      };
-
-      const sizes = {
-        xs: 0,
-        sm: '480px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1440px',
-      };
-    export const Theme = {
-        colors,
-        fontSize,
-        padding,
-        breakpoints: sizes,
-        sizes,
-      
-        innerSize: 1170,
-
-        background: colors.white,
-        text: colors.black,
-        success: colors.success.default,
-        danger: colors.error.default,
-      };
-      
-export default Theme;
-  
+import { createBreakpoints } from "@chakra-ui/theme-tools"
+export default createBreakpoints({
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
+})
+// example theme object
+export const Theme =  {
+  colors: {
+    brand: {
+      900: "#1a365d",
+      800: "#153e75",
+      700: "#2a69ac",
+    },
+  },
+  fonts: {
+    body: "system-ui, sans-serif",
+    heading: "Georgia, serif",
+    mono: "Menlo, monospace",
+  },
+  fontSizes: {
+    xs: "0.75rem",
+    sm: "0.875rem",
+    md: "1rem",
+    lg: "1.125rem",
+    xl: "1.25rem",
+    "2xl": "1.5rem",
+    "3xl": "1.875rem",
+    "4xl": "2.25rem",
+    "5xl": "3rem",
+    "6xl": "3.75rem",
+    "7xl": "4.5rem",
+    "8xl": "6rem",
+    "9xl": "8rem",
+  },
+  fontWeights: {
+    hairline: 100,
+    thin: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+  },
+  lineHeights: {
+    normal: "normal",
+    none: 1,
+    shorter: 1.25,
+    short: 1.375,
+    base: 1.5,
+    tall: 1.625,
+    taller: "2",
+    "3": ".75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "7": "1.75rem",
+    "8": "2rem",
+    "9": "2.25rem",
+    "10": "2.5rem",
+  },
+  letterSpacings: {
+    tighter: "-0.05em",
+    tight: "-0.025em",
+    normal: "0",
+    wide: "0.025em",
+    wider: "0.05em",
+    widest: "0.1em",
+  }
+}

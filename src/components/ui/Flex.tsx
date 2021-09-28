@@ -1,7 +1,14 @@
-import styled from 'styled-components';
-import { Box } from './Box';
-export const Flex = styled(Box)``;
+import { Flex as ChakraFlex } from "@chakra-ui/react"
 
-Flex.defaultProps = {
-  display: 'flex',
-};
+export const Flex = ({
+  ...rest
+}) => {
+  
+  return(
+    <ChakraFlex {...rest}>
+
+    </ChakraFlex>
+  )
+
+}
+export default Flex;

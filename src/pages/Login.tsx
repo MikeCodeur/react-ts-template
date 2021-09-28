@@ -1,66 +1,39 @@
 import * as React from 'react'
 import { useHistory } from 'react-router';
-//import { useAuthStore } from '../commons/store/authStore';
-import {  Text, Flex , Box , Button} from '../components/ui'
+import { useAuthStore } from '../commons/store/authStore';
+import {  Container,Grid, GridItem ,Text, Flex , Box , Button} from '../components/ui'
 export const  Login = () => {
-    const history = useHistory();
-    const { updateAuthStore, isAuth, userLogged } =null//useAuthStore();
-    //Grid Responsive les breacKPoint sont ici dans le theme src/styles/theme.ts
-    const grid4 = {
-        xs: '12', 
-        sm: '12',
-        md: '6',
-        lg: '4',
-        xl: '4',
-      };
     return (
-        <Box p={5}>
-            <Text variant="h1" mb={40}>LOGIN</Text>
-            <Text variant="p">
-                <ul>
-                    <li>Le menu change en fonction des rôles , l'accès aux page est bloqué si pas connecté, </li>
-                    <li>Pas de librairie pour les composant j'utilise juste styled component / system.</li>
-                    <li>J'ai créer des composants simple dans component/ui</li>
-                    <li>J'ai mis les Grid sur le Login ( responsive )</li>
-                    <li>Le routage est découpé par roles , les page sont Private ou non.</li>
-                    <li>Part de APP.JS pour remonter le circuit.</li>
-                    <li>J'ai mis Zustand pour (Gestionnaire d'état) simple.</li>
-                </ul>
-            </Text>
-            <Grid cols={12} gap="20px" mt={20}>
-            <Cell x-span={grid4} placeSelf="left">
-                <Button 
-                    onClick={()=> {
-                        updateAuthStore({isAuth:true,roles:['COACH']});
-                        history.push('/coach/exemple-A')}
-                    }
-                >
-                    Connexion en tant que COACH
-                </Button>
-            </Cell>
-            <Cell x-span={grid4} placeSelf="left">
-                <Button 
-                    variant="ghost"
-                    onClick={()=> {
-                        updateAuthStore({isAuth:true,roles:['STUDENT']});
-                        history.push('/student/exemple-B')}
-                    }
-                >
-                    Connexion en tant que STUDENT
-                </Button>
-            </Cell>
-            <Cell x-span={grid4} placeSelf="left">
-                <Button 
-                    onClick={()=> {
-                        updateAuthStore({isAuth:true,roles:['COACH','STUDENT']});
-                        history.push('/coach/exemple-A')}
-                    }
-                >
-                    Connexion en tant que COACH ET STUDENT
-                </Button>
-            </Cell>
+    <Container>
+        <Box>
+            <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+                <Box w="100%" h="10" bg="blue.500" />
+                <Box w="100%" h="10" bg="blue.500" />
+                <Box w="100%" h="10" bg="blue.500" />
+                <Box w="100%" h="10" bg="blue.500" />
+                <Box w="100%" h="10" bg="blue.500" />
             </Grid>
         </Box>
+        <Box mt={20}>
+            <Grid
+                h="200px"
+                templateRows="repeat(2, 1fr)"
+                templateColumns="repeat(5, 1fr)"
+                gap={4}
+                >
+                <GridItem rowSpan={2} colSpan={1} bg="tomato" />
+                <GridItem colSpan={2} bg="papayawhip" />
+                <GridItem colSpan={2} bg="papayawhip" />
+                <GridItem colSpan={4} bg="tomato" />
+            </Grid>
+        </Box>
+        <Box>
+            <Text variant="h1" >INPUT</Text>
+            <Text variant="h2" >INPUT</Text>
+            <Text variant="h3" >INPUT</Text>
+        </Box>
+    </Container>
+    
         
     )
 }
