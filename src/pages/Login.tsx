@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { useHistory } from 'react-router';
-import { useAuthStore } from '../commons/store/authStore';
-import { Grid, Cell, Text, Flex , Box , Button} from '../components/ui'
+//import { useAuthStore } from '../commons/store/authStore';
+import {  Text, Flex , Box , Button} from '../components/ui'
 export const  Login = () => {
     const history = useHistory();
-    const { updateAuthStore, isAuth, userLogged } = useAuthStore();
+    const { updateAuthStore, isAuth, userLogged } =null//useAuthStore();
     //Grid Responsive les breacKPoint sont ici dans le theme src/styles/theme.ts
     const grid4 = {
         xs: '12', 

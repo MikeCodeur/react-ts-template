@@ -1,80 +1,61 @@
-import styled, { css } from 'styled-components';
-import {
-  alignContent,
-  AlignContentProps,
-  alignItems,
-  AlignItemsProps,
-  border,
-  BorderProps,
-  color,
-  flex,
-  flexDirection,
-  FlexDirectionProps,
-  FlexProps,
-  flexWrap,
-  FlexWrapProps,
-  fontSize,
-  FontSizeProps,
-  fontWeight,
-  FontWeightProps,
-  justifyContent,
-  JustifyContentProps,
-  layout,
-  LayoutProps,
-  opacity,
-  OpacityProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-  textAlign,
-  TextAlignProps,
-} from 'styled-system';
-type CursorProps = {
-  cursor?: string;
-  color?: string;
-  textOverflow?: string;
-  backgroundColor?: string;
-};
-export type BoxProps = LayoutProps &
-  SpaceProps &
-  FlexProps &
-  FlexWrapProps &
-  AlignItemsProps &
-  AlignContentProps &
-  TextAlignProps &
-  BorderProps &
-  OpacityProps &
-  PositionProps &
-  JustifyContentProps &
-  FlexDirectionProps &
-  FontSizeProps &
-  FontWeightProps &
-  CursorProps;
+import styled from '@emotion/styled'
 
-export const boxProperties = css`
-  font-family: Poppins;
-  box-sizing: border-box;
+const justifyMap = {
+  start: 'flex-start',
+  end: 'flex-end',
+  'space-between': 'space-between',
+  'space-around': 'space-around',
+  center: 'center',
+  'space-evenly': 'space-evenly',
+}
+
+const alignMap = {
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  baseline: 'baseline',
+  stretch: 'stretch',
+}
+
+const justifyContent = ({ justify = 'center' }: { justify: Justify }) =>
+  justifyMap[justify]
+
+const alignItems = ({ align = 'center' }: { align: Align }) => alignMap[align]
+
+type Justify =
+  | 'start'
+  | 'end'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+
+type Align = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
+
+export interface Props {
+  wrap: boolean
+  grow: boolean
+  inline: boolean
+  justify: Justify
+  align: Align
+}
+
+const Box = styled('div')<Props>`
+  display: flex;
+  justify-content: ${justifyContent};
+  align-items: ${alignItems};
+  flex-wrap: ${props => (props.wrap ? 'wrap' : 'no-wrap')};
+  flex-grow: ${props => (props.grow ? 1 : 0)};
+  width: ${props => (props.inline ? 'auto' : '100%')};
   position: relative;
-  ${fontSize}
-  ${fontWeight}
-  ${opacity}
-  ${layout}
-  ${border}
-  ${flex}
-  ${flexWrap};
-  ${alignItems}
-  ${alignContent}
-  ${flexDirection}
-  ${justifyContent}
-  ${textAlign}
-  ${space}
-  ${position}
-  ${color};
-`;
+`
 
-export const Box = styled.div<BoxProps>`
-  ${boxProperties}
-  cursor: ${props => props.cursor || 'inherit'};
-  text-overflow: ${props => props.textOverflow || 'default'};
-`;
+export const Row = styled(Box)`
+  flex-direction: row;
+`
+
+export const Column = styled(Box)`
+  flex-direction: column;
+`
+
+export default Box

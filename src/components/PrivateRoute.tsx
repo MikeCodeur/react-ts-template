@@ -4,14 +4,14 @@ import {
     Redirect,
     RouteProps,
   } from 'react-router-dom';
-import { useAuthStore } from '../commons/store/authStore';
+//import { useAuthStore } from '../commons/store/authStore';
 export const PrivateRoute: React.FC<RouteProps & { component: React.FC }> = ({
     component: Component,
     ...rest
   }) => {
 
-    const { isAuth } = useAuthStore();
-
+    //const { isAuth } = useAuthStore();
+   const  isAuth = true
     if(isAuth) {
         return <Route {...rest} render={props => <Component {...props} />} />;
     } else {
