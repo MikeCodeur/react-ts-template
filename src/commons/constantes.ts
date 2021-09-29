@@ -54,8 +54,8 @@ const components = {
   };
 
 export const ThemeDefault = {
-  styles,
-  components,
+ /* styles,*/
+ /* components,*/
   variant: 'outline',
   size: 'md',
   colorScheme: 'green',
@@ -68,3 +68,52 @@ export const ThemeDefault = {
   },
   
 }
+
+const styleGlobalMike = {
+  global: (props: any) => ({
+    body: {
+      color: mode('gray.800', 'whiteAlpha.900')(props),
+      bg: mode('purple.100', 'purple.900')(props),
+    },
+  }),
+}
+
+
+export const ThemeUserMike = {
+  styles:styleGlobalMike,
+  /* components,*/
+   variant: 'outline',
+   size: 'md',
+   colorScheme: 'green',
+   colors: {
+     brand: {
+       100: '#f7fafc',
+       // ...
+       900: '#1a202c',
+     },
+   },
+   
+ }
+ const styleGlobaKevin = {
+  global: (props: any) => ({
+    body: {
+      color: mode('gray.900', 'gray.200')(props),
+      bg: mode('orange.300', 'orange.900')(props),
+    },
+  }),
+}
+ export const ThemeUseKevin = {
+   styles:styleGlobaKevin,
+  /* components,*/
+   variant: 'outline',
+   size: 'md',
+   colorScheme: 'yellow',
+   colors: {
+     brand: {
+       100: '#e7fafc',
+       // ...
+       900: '#ea202c',
+     },
+   },
+   
+ }

@@ -13,9 +13,9 @@ import {
 } from '../components/ui'
 import { BlockPicker } from 'react-color';
 import { useThemeStore } from '../commons/store';
-import { useAppTheme} from '../context/ThemeContext'
+import { useAppTheme,useSetTheme} from '../context/ThemeContext'
 import { useColorMode } from '@chakra-ui/react';
-
+import {ThemeUserMike,ThemeUseKevin} from '../commons/constantes'
 
 const wrapColorsChakra = {
     "#3182CE":"blue",
@@ -64,6 +64,7 @@ const grid1 = {
 export const  Exemple = () => {
     //const { theme, updateThemeStore } = useThemeStore();
     const {theme,setTheme:updateThemeStore} = useAppTheme();
+    const setTheme = useSetTheme();
     const { colorMode, toggleColorMode } = useColorMode();
     const [editColors, setEditColors] = React.useState(false);
     return (
@@ -203,6 +204,12 @@ export const  Exemple = () => {
         <Stack direction="row" spacing={4} align="center" mt={20}>
             <Button onClick={toggleColorMode}>
                 Toggle {colorMode === "light" ? "Dark" : "Light"}
+            </Button>
+            <Button onClick={()=>setTheme(ThemeUseKevin)}>
+                Theme Kevin
+            </Button>
+            <Button onClick={()=>setTheme(ThemeUserMike)}>
+                Theme Mike
             </Button>
             <Button>
                 Par default

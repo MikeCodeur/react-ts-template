@@ -16,6 +16,11 @@ const useAppTheme = () => {
   return context
 }
 
+const useSetTheme = () => {
+  const {setTheme} = useAppTheme()
+  return setTheme
+}
+
 // /*: React.PropsWithChildren<{}>*/
 const ThemeProvider =  (props) => {
   const [theme, setTheme] = React.useState(ThemeDefault)
@@ -27,4 +32,4 @@ const ThemeProvider =  (props) => {
 
 
 
-export {ThemeContext, useAppTheme, ThemeProvider,}
+export {ThemeContext, useAppTheme, ThemeProvider,useSetTheme}

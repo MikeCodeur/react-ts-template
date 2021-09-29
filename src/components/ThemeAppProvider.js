@@ -5,7 +5,7 @@ import {useAppTheme} from '../context/ThemeContext'
 const ThemeAppProvider = ({children}) => {
   const {theme} = useAppTheme()
   const config = {
-    initialColorMode: 'dark',
+    initialColorMode: 'light',
     useSystemColorMode: false,
   }
   // MODIFIE INDIVIDUELLEMENT CHAQUE COMPO
