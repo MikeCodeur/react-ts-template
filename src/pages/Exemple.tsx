@@ -13,6 +13,7 @@ import {
 } from '../components/ui'
 import { BlockPicker } from 'react-color';
 import { useThemeStore } from '../commons/store';
+import { useAppTheme} from '../context/ThemeContext'
 import { useColorMode } from '@chakra-ui/react';
 
 
@@ -61,9 +62,10 @@ const grid1 = {
     xxl:12,
 }
 export const  Exemple = () => {
-    const { theme, updateThemeStore } = useThemeStore();
+    //const { theme, updateThemeStore } = useThemeStore();
+    const {theme,setTheme:updateThemeStore} = useAppTheme();
     const { colorMode, toggleColorMode } = useColorMode();
-    const [editColors, setEditColors] = React.useState(false)
+    const [editColors, setEditColors] = React.useState(false);
     return (
     <Container>
         <Box mt={20} >
@@ -170,13 +172,19 @@ export const  Exemple = () => {
             {editColors && <BlockPicker 
                 colors={["#3182CE","#E53E3E", "#38A169", "#D53F8C"]}
                 //@ts-ignore
-                color={wrapColorsPicker[theme.colorScheme]}
+                color={wrapColorsPicker[theme?.colorScheme]}
                 onChangeComplete={(color)=> updateThemeStore({
-                    theme:{
-                    ...theme,
-                    //@ts-ignore
-                    colorScheme:wrapColorsChakra[color.hex.toUpperCase()],
-                    },
+                   ...theme,
+                   //@ts-ignore
+                   colorScheme:wrapColorsChakra[color.hex.toUpperCase()],
+                //    colors:{
+                //    brand: {
+                //             //@ts-ignore
+                //             "100":color.hex,
+                //             //@ts-ignore
+                //             "900":color.hex,
+                //         },
+                //     },
                     color:color.hex,
                 })}
             
