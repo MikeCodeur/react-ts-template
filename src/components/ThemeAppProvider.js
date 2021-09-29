@@ -9,14 +9,15 @@ const ThemeAppProvider = ({children}) => {
     useSystemColorMode: false,
   }
   // MODIFIE INDIVIDUELLEMENT CHAQUE COMPO
-  //const customTheme = extendTheme({...theme, config});
+ // const customTheme = extendTheme({...theme, config});
 
   // MODIFIE LE THEME GENERAL 
   const customTheme = extendTheme(
+    {...theme},
     withDefaultProps({
       defaultProps:theme,
     },
-     config
+     config,
     ),
   )
   return <ChakraProvider theme={customTheme}>{children}</ChakraProvider>
