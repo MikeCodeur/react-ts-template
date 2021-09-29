@@ -10,9 +10,8 @@ import {
     Stack
 } from '../components/ui'
 import { BlockPicker } from 'react-color';
-import { useThemeStore } from '../commons/store';
 import { useColorMode } from '@chakra-ui/react';
-
+import { useAppTheme} from '../context/ThemeContext'
 
 const wrapColorsChakra = {
     "#3182CE":"blue",
@@ -27,7 +26,8 @@ const wrapColorsPicker = {
     "pink":"#D53F8C" ,
 };
 export const  Login = () => {
-    const { theme, updateThemeStore } = useThemeStore();
+    //const { updateThemeStore } = useThemeStore();
+    const {theme,setTheme:updateThemeStore} = useAppTheme()
     const { colorMode, toggleColorMode } = useColorMode();
     const [editColors, setEditColors] = React.useState(false)
     return (
