@@ -15,7 +15,6 @@ import {
 
 
 
-
 function App() {
   // Je simule un theme chargé en BDD 
   const { theme } = useThemeStore();
