@@ -45,7 +45,7 @@
     "test:coverage": "npm test -- --coverage",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --watch --runInBand",
     "lint": "eslint . --cache-location node_modules/.cache/eslint",
-    "format": "prettier --write \"**/*.+(js|json|css|md|mdx|html)\"",
+    "format": "prettier --write \"**/*.+(js|ts|jsx|tsx|json|css|md|mdx|html)\"",
     "validate": "npm-run-all --parallel lint test:coverage format"
   },
   "eslintConfig": {

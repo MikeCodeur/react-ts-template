@@ -1,14 +1,6 @@
-import { Stack as ChakraStack } from "@chakra-ui/react"
+import {Stack as ChakraStack} from '@chakra-ui/react'
 
-export const Stack = ({
-  ...rest
-}) => {
-  
-  return(
-    <ChakraStack {...rest}>
-
-    </ChakraStack>
-  )
-
+export const Stack = ({...rest}) => {
+  return <ChakraStack {...rest}></ChakraStack>
 }
-export default Stack;
+export default Stack
