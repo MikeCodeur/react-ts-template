@@ -10,7 +10,7 @@ export const App = () => {
     <Router>
       <AppProviders>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-             <RouterPages />
+          <RouterPages />
         </ErrorBoundary>
       </AppProviders>
     </Router>
