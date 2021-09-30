@@ -1,6 +1,11 @@
+import React from 'react'
 import {useHistory} from 'react-router-dom'
 
-function ErrorFallback({error, resetErrorBoundary}) {
+type ErrorFallbackTypes = {
+  error:any;
+  resetErrorBoundary:any;
+}
+function ErrorFallback({error, resetErrorBoundary}:ErrorFallbackTypes) {
   const history = useHistory()
 
   const handleClick = () => {
@@ -24,7 +29,11 @@ function ErrorFallback({error, resetErrorBoundary}) {
         </pre>
 
         <div>
-          <button onClick={handleClick}>Accueil</button>
+          <button
+            onClick={handleClick}
+          >
+            Accueil
+          </button>
         </div>
       </div>
     </div>

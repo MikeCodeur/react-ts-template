@@ -2,23 +2,25 @@ import * as React from 'react'
 import {ChakraProvider, extendTheme, withDefaultProps} from '@chakra-ui/react'
 import {useAppTheme} from '../context/ThemeContext'
 
-const ThemeAppProvider = ({children}) => {
+type ThemeAppProviderTypes = {
+  children: React.ReactNode;
+}
+const ThemeAppProvider = ({children}:ThemeAppProviderTypes) => {
   const {theme} = useAppTheme()
   const config = {
     initialColorMode: 'light',
     useSystemColorMode: false,
   }
   // MODIFIE INDIVIDUELLEMENT CHAQUE COMPO
-  // const customTheme = extendTheme({...theme, config});
+ // const customTheme = extendTheme({...theme, config});
 
-  // MODIFIE LE THEME GENERAL
+  // MODIFIE LE THEME GENERAL 
   const customTheme = extendTheme(
     {...theme},
-    withDefaultProps(
-      {
-        defaultProps: theme,
-      },
-      config,
+    withDefaultProps({
+      defaultProps:theme,
+    },
+ /*    config,*/
     ),
   )
   return <ChakraProvider theme={customTheme}>{children}</ChakraProvider>
