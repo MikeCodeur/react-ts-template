@@ -1,13 +1,11 @@
 // theme.js
-import { createBreakpoints } from "@chakra-ui/theme-tools";
+import {createBreakpoints} from '@chakra-ui/theme-tools'
 export default createBreakpoints({
-  sm: "30em",
-  md: "48em",
-  lg: "62em",
-  xl: "80em",
-  "2xl": "96em",
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
 })
 // example theme object
-export const Theme =  {
- 
-}
+export const Theme = {}
