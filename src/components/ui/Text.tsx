@@ -1,12 +1,11 @@
 import { Text as ChakraText } from "@chakra-ui/react"
 import {useTheme, css } from '@emotion/react'
 import styled from '@emotion/styled';
-import { useThemeStore } from '../../commons/store';
-
+import {useAppTheme} from '../../context/ThemeContext'
 // Surcharge du Compo Text de Chakra avec @emotion
 const CustomText = styled(ChakraText)`
 ${props => {
-   const { theme } = useThemeStore();
+   const {theme} = useAppTheme()
     switch (props.variant) {
       case 'h1':
         return css`

@@ -2,8 +2,8 @@ import * as React from 'react'
 import {QueryClient, QueryClientProvider} from 'react-query'
 import {ReactQueryDevtools} from 'react-query/devtools'
 import {AuthProvider} from './AuthContext'
-import {ThemeDefaultProps} from '../commons/constantes'
-import {ChakraProvider, extendTheme, withDefaultProps} from '@chakra-ui/react'
+import {ThemeAppProvider} from '../components/ThemeAppProvider'
+import {ThemeProvider} from './ThemeContext'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,17 +29,13 @@ const queryClient = new QueryClient({
 })
 
 const AppProviders = ({children}) => {
-  const {theme} = React.useState(ThemeDefaultProps) //useThemeStore();
-  const customTheme = extendTheme(
-    withDefaultProps({
-      defaultProps: theme,
-    }),
-  )
   return (
     <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={customTheme}>
-        <AuthProvider>{children}</AuthProvider>
-      </ChakraProvider>
+      <ThemeProvider>
+        <ThemeAppProvider>
+          <AuthProvider>{children}</AuthProvider>
+        </ThemeAppProvider>
+      </ThemeProvider>
       {process.env.NODE_ENV === 'development' && (
         <ReactQueryDevtools initialIsOpen={false} />
       )}
