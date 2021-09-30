@@ -36,7 +36,7 @@ const AppBar: React.FC<AppBarProps> = () => {
             <Box p={10}>
               <Link to={'/about'}>About</Link>
             </Box>
-            <Box p={10} onClick={()=> logout({})}>
+            <Box p={10} onClick={()=> logout()}>
               <Link to={'/login'}>DECONNEXION</Link>
             </Box>
             <Flex>

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import {QueryClient, QueryClientProvider} from 'react-query'
 import {ReactQueryDevtools} from 'react-query/devtools'
 import {AuthProvider} from './AuthContext'
@@ -11,7 +11,7 @@ const queryClient = new QueryClient({
       useErrorBoundary: true,
       refetchOnWindowFocus: false,
       retryDelay: 500,
-      retry: (failureCount, error) => {
+      retry: (failureCount, error:any) => {
         if (error.status === 404) return false
         else if (error.status === 401) return false
         else if (failureCount > 3) return false
@@ -20,15 +20,16 @@ const queryClient = new QueryClient({
     },
     mutations: {
       useErrorBoundary: false,
-      refetchOnWindowFocus: false,
       retryDelay: 500,
       retry: 1,
       // mutation options
     },
   },
 })
-
-const AppProviders = ({children}) => {
+type AppProvidersProps = {
+  children: React.ReactNode;
+}
+const AppProviders = ({children}:AppProvidersProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
