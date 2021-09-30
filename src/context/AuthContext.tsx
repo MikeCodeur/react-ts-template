@@ -1,26 +1,24 @@
 import * as React from 'react'
 
 interface IUser {
-  username: string;
-  password?: string;
-  token?:string;
-  roles?:string[];
+  username: string
+  password?: string
+  token?: string
+  roles?: string[]
 }
 
 export type AuthContextStore = {
-  authUser: any;
-  login: (data:IUser) => void;
-  register: (data:IUser) => void;
-  logout: () => void;
+  authUser: any
+  login: (data: IUser) => void
+  register: (data: IUser) => void
+  logout: () => void
 }
-const AuthContext = React.createContext<AuthContextStore>(
-  {
-    authUser: {},
-    login: () => {}, // To be implemented in provider
-    register: () => {}, // To be implemented in provider
-    logout: () => {}, // To be implemented in provider
-  }
-)
+const AuthContext = React.createContext<AuthContextStore>({
+  authUser: {},
+  login: () => {}, // To be implemented in provider
+  register: () => {}, // To be implemented in provider
+  logout: () => {}, // To be implemented in provider
+})
 
 const useAuth = () => {
   const context = React.useContext(AuthContext)
@@ -41,7 +39,7 @@ async function getUserByToken() {
   return user
 }
 
-const AuthProvider = (props:React.PropsWithChildren<{}>) => {
+const AuthProvider = (props: React.PropsWithChildren<{}>) => {
   const [authUser, setAuthUser] = React.useState<IUser | null>()
   const fakeUser = {token: 'fake', roles: ['COACH', 'STUDENT']}
   const login = React.useCallback(

@@ -1,7 +1,7 @@
 import {mode} from '@chakra-ui/theme-tools'
 // A stocker en BDD plus tard
 
-//pas utiliser 
+//pas utiliser
 export const ThemeDefaultProps = {
   variant: 'outline',
   size: 'md',
@@ -18,44 +18,44 @@ const styles = {
 }
 
 const components = {
-    Drawer: {
-      // setup light/dark mode component defaults
-      baseStyle: (props:any) => ({
-        dialog: {
-          bg: mode('white', '#141214')(props),
-        },
+  Drawer: {
+    // setup light/dark mode component defaults
+    baseStyle: (props: any) => ({
+      dialog: {
+        bg: mode('white', '#141214')(props),
+      },
+    }),
+  },
+  Button: {
+    // 1. We can update the base styles
+    baseStyle: {
+      fontWeight: 'bold', // Normally, it is "semibold"
+    },
+    // 2. We can add a new button size or extend existing
+    sizes: {
+      xl: {
+        h: '56px',
+        fontSize: 'lg',
+        px: '32px',
+      },
+    },
+    // 3. We can add a new visual variant
+    variants: {
+      'with-shadow': {
+        bg: 'red.400',
+        boxShadow: '0 0 2px 2px #efdfde',
+      },
+      // 4. We can override existing variants
+      solid: (props: any) => ({
+        bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
       }),
     },
-    Button: {
-        // 1. We can update the base styles
-        baseStyle: {
-          fontWeight: 'bold', // Normally, it is "semibold"
-        },
-        // 2. We can add a new button size or extend existing
-        sizes: {
-          xl: {
-            h: '56px',
-            fontSize: 'lg',
-            px: '32px',
-          },
-        },
-        // 3. We can add a new visual variant
-        variants: {
-          'with-shadow': {
-            bg: 'red.400',
-            boxShadow: '0 0 2px 2px #efdfde',
-          },
-          // 4. We can override existing variants
-          solid: (props: any) => ({
-            bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
-          }),
-        },
-      },
-  };
+  },
+}
 
 export const ThemeDefault = {
- /* styles,*/
- /* components,*/
+  /* styles,*/
+  /* components,*/
   variant: 'outline',
   size: 'md',
   colorScheme: 'green',
@@ -66,7 +66,6 @@ export const ThemeDefault = {
       900: '#1a202c',
     },
   },
-  
 }
 
 const styleGlobalMike = {
@@ -78,23 +77,21 @@ const styleGlobalMike = {
   }),
 }
 
-
 export const ThemeUserMike = {
-  styles:styleGlobalMike,
+  styles: styleGlobalMike,
   /* components,*/
-   variant: 'outline',
-   size: 'md',
-   colorScheme: 'green',
-   colors: {
-     brand: {
-       100: '#f7fafc',
-       // ...
-       900: '#1a202c',
-     },
-   },
-   
- }
- const styleGlobaKevin = {
+  variant: 'outline',
+  size: 'md',
+  colorScheme: 'green',
+  colors: {
+    brand: {
+      100: '#f7fafc',
+      // ...
+      900: '#1a202c',
+    },
+  },
+}
+const styleGlobaKevin = {
   global: (props: any) => ({
     body: {
       color: mode('gray.900', 'gray.200')(props),
@@ -102,18 +99,50 @@ export const ThemeUserMike = {
     },
   }),
 }
- export const ThemeUseKevin = {
-   styles:styleGlobaKevin,
+export const ThemeUseKevin = {
+  styles: styleGlobaKevin,
   /* components,*/
-   variant: 'outline',
-   size: 'md',
-   colorScheme: 'yellow',
-   colors: {
-     brand: {
-       100: '#e7fafc',
-       // ...
-       900: '#ea202c',
-     },
-   },
-   
- }
+  variant: 'outline',
+  size: 'md',
+  colorScheme: 'yellow',
+  colors: {
+    brand: {
+      100: '#e7fafc',
+      // ...
+      900: '#ea202c',
+    },
+  },
+}
+
+export const grid6 = {
+  xs: 12,
+  sm: 12,
+  md: 2,
+  lg: 2,
+  xl: 2,
+  xxl: 2,
+}
+export const grid4 = {
+  xs: 12,
+  sm: 12,
+  md: 6,
+  lg: 6,
+  xl: 3,
+  xxl: 3,
+}
+export const grid2 = {
+  xs: 12,
+  sm: 12,
+  md: 6,
+  lg: 6,
+  xl: 6,
+  xxl: 6,
+}
+export const grid1 = {
+  xs: 12,
+  sm: 12,
+  md: 12,
+  lg: 12,
+  xl: 12,
+  xxl: 12,
+}

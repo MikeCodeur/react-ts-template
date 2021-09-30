@@ -15,7 +15,14 @@ import {BlockPicker} from 'react-color'
 import {useAppTheme, useSetTheme} from '../context/ThemeContext'
 import {useAuth} from '../context/AuthContext'
 import {useColorMode} from '@chakra-ui/react'
-import {ThemeUserMike, ThemeUseKevin} from '../commons/constantes'
+import {
+  ThemeUserMike,
+  ThemeUseKevin,
+  grid1,
+  grid2,
+  grid4,
+  grid6,
+} from '../commons/constantes'
 
 const wrapColorsChakra = {
   '#3182CE': 'blue',
@@ -29,38 +36,7 @@ const wrapColorsPicker = {
   green: '#38A169',
   pink: '#D53F8C',
 }
-const grid6 = {
-  xs: 12,
-  sm: 12,
-  md: 2,
-  lg: 2,
-  xl: 2,
-  xxl: 2,
-}
-const grid4 = {
-  xs: 12,
-  sm: 12,
-  md: 6,
-  lg: 6,
-  xl: 3,
-  xxl: 3,
-}
-const grid2 = {
-  xs: 12,
-  sm: 12,
-  md: 6,
-  lg: 6,
-  xl: 6,
-  xxl: 6,
-}
-const grid1 = {
-  xs: 12,
-  sm: 12,
-  md: 12,
-  lg: 12,
-  xl: 12,
-  xxl: 12,
-}
+
 export const Exemple = () => {
   //const { theme, updateThemeStore } = useThemeStore();
   const {theme, setTheme: updateThemeStore} = useAppTheme()

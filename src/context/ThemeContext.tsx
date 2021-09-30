@@ -2,8 +2,8 @@ import * as React from 'react'
 import {ThemeDefault} from '../commons/constantes'
 
 export type ThemeContextStore = {
-  theme: any;
-  setTheme: (theme:any) => void;
+  theme: any
+  setTheme: (theme: any) => void
 }
 
 const ThemeContext = React.createContext<ThemeContextStore>({
@@ -24,7 +24,7 @@ const useSetTheme = () => {
   return setTheme
 }
 
-const ThemeProvider = (props:React.PropsWithChildren<{}>) => {
+const ThemeProvider = (props: React.PropsWithChildren<{}>) => {
   const [theme, setTheme] = React.useState(ThemeDefault)
   const value = {theme, setTheme}
   return <ThemeContext.Provider value={value} {...props} />

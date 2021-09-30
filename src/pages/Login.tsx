@@ -1,26 +1,14 @@
 import * as React from 'react'
-import {  
-    Container as ContainerPage,
-    Col,
-    Row,
-    Grid, 
-    GridItem,
-    Text, 
-    Box, 
-    Button, 
-    Stack,
-    Flex,
-} from '../components/ui';
-import { Exemple } from './Exemple';
+import {Container as ContainerPage, Box, Flex} from '../components/ui'
+import {grid1, grid2, grid4, grid6} from '../commons/constantes'
 
-export const  Login = () => {
-
-    return (
+export const Login = () => {
+  return (
     <ContainerPage>
-        <Exemple/>
+      <Flex justifyContent="center">
+        <Box>a</Box>
+      </Flex>
     </ContainerPage>
-    
-        
-    )
+  )
 }
-export default Login;
+export default Login

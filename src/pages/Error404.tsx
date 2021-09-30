@@ -1,21 +1,21 @@
-
 import {Link} from 'react-router-dom'
 
-export const  Error404 = () => {
+export const Error404 = () => {
   const imageUrl = '/images/bg-lost-in-space.png'
   return (
-    <div style={{
-      backgroundImage: `url('${imageUrl}')`,
-      backgroundSize: 'cover',
+    <div
+      style={{
+        backgroundImage: `url('${imageUrl}')`,
+        backgroundSize: 'cover',
 
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      bottom: 0,
-      right: 0,
-      overflow: 'auto',
-    }}>
-
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        overflow: 'auto',
+      }}
+    >
       <div
         role="alert"
         style={{
@@ -38,4 +38,3 @@ export const  Error404 = () => {
     </div>
   )
 }
-

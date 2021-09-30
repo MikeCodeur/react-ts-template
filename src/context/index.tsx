@@ -11,7 +11,7 @@ const queryClient = new QueryClient({
       useErrorBoundary: true,
       refetchOnWindowFocus: false,
       retryDelay: 500,
-      retry: (failureCount, error:any) => {
+      retry: (failureCount, error: any) => {
         if (error.status === 404) return false
         else if (error.status === 401) return false
         else if (failureCount > 3) return false
@@ -27,9 +27,9 @@ const queryClient = new QueryClient({
   },
 })
 type AppProvidersProps = {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
-const AppProviders = ({children}:AppProvidersProps) => {
+const AppProviders = ({children}: AppProvidersProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>

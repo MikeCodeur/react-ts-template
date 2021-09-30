@@ -1,9 +1,7 @@
 import * as React from 'react'
 import {AuthAppTemplate} from '../components/templates/AuthAppTemplate'
-import { HelloWorld } from '../components/HelloWorld'
+import {HelloWorld} from '../components/HelloWorld'
 const AccountPage = () => {
-  return (
-    <HelloWorld/>
-  )
+  return <HelloWorld />
 }
 export {AccountPage}
