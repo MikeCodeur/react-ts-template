@@ -6,7 +6,6 @@ import {RouterPages} from './pages'
 import {AppProviders} from './context/'
 
 export const App = () => {
-  console.log('TOTO')
   return (
     <Router>
       <AppProviders>
