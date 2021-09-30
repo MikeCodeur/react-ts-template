@@ -1,12 +1,13 @@
 import * as React from 'react'
-import {ThemeDefaultProps,ThemeDefault} from '../commons/constantes'
+import {ThemeDefaultProps, ThemeDefault} from '../commons/constantes'
 
 // export type ThemeContextStore = {
 //   theme: {};
 // };
 
-const ThemeContext = React.createContext/*<ThemeContextStore>*/(/*{theme:{}}*/)
-
+const ThemeContext = React
+  .createContext /*<ThemeContextStore>*/
+  (/*{theme:{}}*/)
 
 const useAppTheme = () => {
   const context = React.useContext(ThemeContext)
@@ -22,14 +23,11 @@ const useSetTheme = () => {
 }
 
 // /*: React.PropsWithChildren<{}>*/
-const ThemeProvider =  (props) => {
+const ThemeProvider = props => {
   const [theme, setTheme] = React.useState(ThemeDefault)
   const value = {theme, setTheme}
   //return <ThemeContext.
   return <ThemeContext.Provider value={value} {...props} />
 }
 
-
-
-
-export {ThemeContext, useAppTheme, ThemeProvider,useSetTheme}
+export {ThemeContext, useAppTheme, ThemeProvider, useSetTheme}

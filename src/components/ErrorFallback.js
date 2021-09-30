@@ -24,11 +24,7 @@ function ErrorFallback({error, resetErrorBoundary}) {
         </pre>
 
         <div>
-          <button
-            onClick={handleClick}
-          >
-            Accueil
-          </button>
+          <button onClick={handleClick}>Accueil</button>
         </div>
       </div>
     </div>

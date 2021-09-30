@@ -23,13 +23,18 @@ async function getUserByToken() {
 
 const AuthProvider = props => {
   const [authUser, setAuthUser] = React.useState()
-  const fakeUser = {token:'fake',roles:['COACH','STUDENT']}
-  const login = React.useCallback( data => setAuthUser({...fakeUser,username:data.username}),[setAuthUser])
-  const register = React.useCallback( data => setAuthUser({...fakeUser,username:data.username}),[setAuthUser])
-  const logout = React.useCallback( () => setAuthUser(null),[setAuthUser])
+  const fakeUser = {token: 'fake', roles: ['COACH', 'STUDENT']}
+  const login = React.useCallback(
+    data => setAuthUser({...fakeUser, username: data.username}),
+    [setAuthUser],
+  )
+  const register = React.useCallback(
+    data => setAuthUser({...fakeUser, username: data.username}),
+    [setAuthUser],
+  )
+  const logout = React.useCallback(() => setAuthUser(null), [setAuthUser])
   const value = {authUser, login, register, logout}
   return <AuthContext.Provider value={value} {...props} />
 }
-
 
 export {AuthContext, useAuth, AuthProvider}
