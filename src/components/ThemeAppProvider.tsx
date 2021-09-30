@@ -17,10 +17,10 @@ const ThemeAppProvider = ({children}:ThemeAppProviderTypes) => {
   // MODIFIE LE THEME GENERAL 
   const customTheme = extendTheme(
     {...theme},
+    config,
     withDefaultProps({
       defaultProps:theme,
     },
- /*    config,*/
     ),
   )
   return <ChakraProvider theme={customTheme}>{children}</ChakraProvider>
