@@ -1,13 +1,13 @@
-var spawnSync = require("child_process").spawnSync;
-const { username } = require("os").userInfo();
+var spawnSync = require('child_process').spawnSync
+const {username} = require('os').userInfo()
 
-if (username === "_mika" || username === "kevin") {
-  const result = spawnSync("npm run validate", {
-    stdio: "inherit",
+if (username === '_mika' || username === 'kevin') {
+  const result = spawnSync('npm run validate', {
+    stdio: 'inherit',
     shell: true,
-  });
+  })
 
   if (result.status !== 0) {
-    process.exit(result.status);
+    process.exit(result.status)
   }
 }
