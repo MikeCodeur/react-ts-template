@@ -7,6 +7,7 @@ export const PrivateRoute: React.FC<RouteProps & {component: React.FC}> = ({
   ...rest
 }) => {
   const {authUser}: any = useAuth()
+  console.log('authUser', authUser)
   if (authUser) {
     return <Route {...rest} render={props => <Component {...props} />} />
   } else {

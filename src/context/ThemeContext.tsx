@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {ThemeDefault} from '../commons/constantes'
+import {ThemeDefault, ThemeUserMike, ThemeUseKevin} from '../commons/constantes'
 
 export type ThemeContextStore = {
   theme: any

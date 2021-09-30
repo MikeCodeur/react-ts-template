@@ -52,13 +52,21 @@ const components = {
     },
   },
 }
-
+const styleGlobalDefault = {
+  global: (props: any) => ({
+    body: {
+      color: mode('black', 'black')(props),
+      bg: mode('white', 'black')(props),
+    },
+  }),
+}
 export const ThemeDefault = {
-  /* styles,*/
+  styles: styleGlobalDefault,
   /* components,*/
   variant: 'outline',
   size: 'md',
-  colorScheme: 'green',
+  colorScheme: 'teal',
+  'font-family': 'Poppins',
   colors: {
     brand: {
       100: '#f7fafc',
@@ -114,6 +122,13 @@ export const ThemeUseKevin = {
   },
 }
 
+export const sizes = {
+  xs: 0,
+  sm: '480px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1440px',
+}
 export const grid6 = {
   xs: 12,
   sm: 12,

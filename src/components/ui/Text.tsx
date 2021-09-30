@@ -7,24 +7,25 @@ import {useAppTheme} from '../../context/ThemeContext'
 const CustomText = styled(ChakraText)`
   ${props => {
     const {theme} = useAppTheme()
+    const color = props?.color || props?.colorScheme || theme?.colorScheme
     switch (props.variant) {
       case 'h1':
         return css`
           font-size: 25px;
           font-weight: 700;
-          color: ${props?.colorScheme || theme?.colorScheme};
+          color: ${color};
         `
       case 'h2':
         return css`
           font-size: 22px;
           font-weight: 600;
-          color: ${props?.colorScheme || theme?.colorScheme};
+          color: ${color};
         `
       case 'h3':
         return css`
           font-size: 16px;
           font-weight: 600;
-          color: ${props?.colorScheme || theme?.colorScheme};
+          color: ${color};
         `
       case 'disabled':
         return css`
@@ -35,7 +36,7 @@ const CustomText = styled(ChakraText)`
       default:
         return css`
           font-size: 14px;
-          color: ${props?.colorScheme || theme?.colorScheme};
+          color: ${color};
         `
     }
   }}

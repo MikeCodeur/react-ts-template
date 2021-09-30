@@ -1,10 +1,75 @@
 import * as React from 'react'
-import {Box} from '../../components/ui'
+import {
+  Stack,
+  Heading,
+  Flex,
+  Box,
+  Link,
+  Button,
+  FormInput,
+} from '../../components/ui'
+import {AiFillLinkedin, AiFillGoogleCircle} from 'react-icons/ai'
+import {LinkIcon} from '@chakra-ui/icons'
+import {useAuth} from '../../context/AuthContext'
+import {useHistory} from 'react-router'
 
 export const LoginForm = () => {
+  const history = useHistory()
+  const {login, register, logout, authUser} = useAuth()
+  console.log('authUser', authUser)
+  type FormValues = {
+    email: string
+    password: string
+  }
+  const onSubmit = async (formValues?: FormValues) => {
+    await login({username: 'mike'})
+    history.push('/coach/exemple-A')
+  }
+
   return (
     <Box>
-      <></>
+      <Heading variant="h1" size="lg">
+        Connectez - vous
+      </Heading>
+      <Stack direction="row" spacing={12} align="center" mt={5}>
+        <Button variant="ghost">
+          <AiFillLinkedin color="black" />
+        </Button>
+        <Button variant="ghost" color="black">
+          <AiFillGoogleCircle />
+        </Button>
+        <Button variant="ghost" color="black">
+          <LinkIcon />
+        </Button>
+      </Stack>
+      <Box mt={10}>
+        <Box>
+          <FormInput
+            placeholder="john.doe@email.com"
+            type="email"
+            label="Email"
+            id="test"
+          />
+        </Box>
+        <Box>
+          <FormInput type="password" label="Password" id="test" />
+        </Box>
+        <Flex width={'100%'} justifyContent="center" mt={5}>
+          <Button colorScheme="linkedin" variant="link">
+            Mot de passe perdu
+          </Button>
+        </Flex>
+        <Flex width={'100%'} justifyContent="center" mt={5}>
+          <Button
+            onClick={() => {
+              onSubmit()
+            }}
+            variant="solid"
+          >
+            Connexion
+          </Button>
+        </Flex>
+      </Box>
     </Box>
   )
 }
