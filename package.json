@@ -44,7 +44,7 @@
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --watch --runInBand",
     "lint": "eslint . --cache-location node_modules/.cache/eslint",
     "format": "prettier --write \"**/*.+(js|json|css|md|mdx|html)\"",
-    "validate": "npm-run-all --parallel lint test:coverage"
+    "validate": "npm-run-all --parallel lint test:coverage format"
   },
   "eslintConfig": {
     "extends": [
@@ -54,7 +54,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "node ./scripts/pre-push"
+      "pre-commit": "node ./scripts/pre-commit"
     }
   },
   "browserslist": {
