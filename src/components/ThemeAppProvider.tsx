@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {ChakraProvider, extendTheme, withDefaultProps} from '@chakra-ui/react'
 import {useAppTheme} from '../context/ThemeContext'
-import {theme as HyperTheme} from '../theme'
+
 type ThemeAppProviderTypes = {
   children: React.ReactNode
 }

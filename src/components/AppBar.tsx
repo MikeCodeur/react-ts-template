@@ -17,18 +17,21 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  useColorMode,
 } from '@chakra-ui/react'
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  MoonIcon,
 } from '@chakra-ui/icons'
 import {useAuth} from '../context/AuthContext'
 
 export const AppBar = () => {
   const {isOpen, onToggle} = useDisclosure()
   const {login, register, logout, authUser} = useAuth()
+  const {colorMode, toggleColorMode} = useColorMode()
   return (
     <Box>
       <Flex
@@ -76,6 +79,14 @@ export const AppBar = () => {
           direction={'row'}
           spacing={6}
         >
+          <Button
+            fontSize={'sm'}
+            fontWeight={400}
+            variant={'ghost'}
+            onClick={() => toggleColorMode()}
+          >
+            <MoonIcon />
+          </Button>
           <Button
             fontSize={'sm'}
             fontWeight={400}
