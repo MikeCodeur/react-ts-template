@@ -3,9 +3,9 @@ import {Link as DomRouterLink} from 'react-router-dom'
 export const Link = ({...rest}: LinkProps & {to?: string}) => {
   if (rest?.to) {
     return (
-      <DomRouterLink to={rest?.to}>
-        <ChakraLink {...rest}></ChakraLink>
-      </DomRouterLink>
+      <ChakraLink {...rest}>
+        <DomRouterLink to={rest?.to}>{rest?.children}</DomRouterLink>
+      </ChakraLink>
     )
   }
   return <ChakraLink {...rest}></ChakraLink>
