@@ -4,6 +4,7 @@ const colors: Colors = {
   transparent: 'transparent',
   current: 'currentColor',
   black: '#000000',
+  colorScheme: 'blue',
   white: '#FFFFFF',
   whiteAlpha: {
     50: 'rgba(255, 255, 255, 0.04)',
