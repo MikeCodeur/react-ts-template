@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from '../components/ui'
-
+//import {Link} from '../components/ui'
+import {Link as DomRouterLink} from 'react-router-dom'
 import {
   Box,
   Flex,
@@ -10,7 +10,7 @@ import {
   Stack,
   Collapse,
   Icon,
-  //Link,
+  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -118,6 +118,7 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
+                as={DomRouterLink}
                 to={navItem.href ?? '#'}
                 fontSize={'sm'}
                 fontWeight={500}
@@ -157,6 +158,7 @@ const DesktopNav = () => {
 const DesktopSubNav = ({label, href, subLabel}: NavItem) => {
   return (
     <Link
+      as={DomRouterLink}
       to={href}
       role={'group'}
       display={'block'}
@@ -248,7 +250,7 @@ const MobileNavItem = ({label, children, href}: NavItem) => {
         >
           {children &&
             children.map(child => (
-              <Link key={child.label} py={2} to={child.href}>
+              <Link as={DomRouterLink} key={child.label} py={2} to={child.href}>
                 {child.label}
               </Link>
             ))}
@@ -262,7 +264,7 @@ interface NavItem {
   label: string
   subLabel?: string
   children?: Array<NavItem>
-  href?: string
+  href: string
 }
 
 const NAV_ITEMS: Array<NavItem> = [
@@ -272,6 +274,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Vos formations',
+    href: '#',
     children: [
       {
         label: 'Gestion des formations',
@@ -287,6 +290,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Vos élèves',
+    href: '#',
     children: [
       {
         label: 'Gérer vos élèves',
