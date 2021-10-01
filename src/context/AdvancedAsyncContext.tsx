@@ -92,8 +92,8 @@ const AuthProvider = (props: React.PropsWithChildren<{}>) => {
 async function updateMovie(dispatch: Dispatch, movie: IMovie, updates: any) {
   dispatch({type: 'start', payload: updates})
   try {
-    const updatedUser = null //await userClient.updateUser(user, updates)
-    dispatch({type: 'finish', payload: updatedUser})
+    const updatedMovie = null //await movieApiClient.updatedMovie(user, updates)
+    dispatch({type: 'finish', payload: updatedMovie})
   } catch (error) {
     dispatch({type: 'fail', payload: error})
   }

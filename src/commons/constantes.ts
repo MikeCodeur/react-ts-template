@@ -79,23 +79,30 @@ export const ThemeDefault = {
 const styleGlobalMike = {
   global: (props: any) => ({
     body: {
-      color: mode('gray.800', 'whiteAlpha.900')(props),
-      bg: mode('purple.100', 'purple.900')(props),
+      color: mode('#011627', '#FBFBFB')(props),
+      bg: mode('#D6DEEB', '#403F53')(props),
     },
   }),
 }
 
 export const ThemeUserMike = {
-  styles: styleGlobalMike,
+  //  styles: styleGlobalMike,
   /* components,*/
   variant: 'outline',
   size: 'md',
-  colorScheme: 'green',
+  colorScheme: 'blue',
   colors: {
     brand: {
-      100: '#f7fafc',
-      // ...
-      900: '#1a202c',
+      50: '#EAECEE',
+      100: '#EAECEE',
+      200: '#D5D8DC',
+      300: '#ABB2B9',
+      400: '#808B96',
+      500: '#566573',
+      600: '#2C3E50',
+      700: '#273746',
+      800: '#212F3D',
+      900: '#17202A',
     },
   },
 }

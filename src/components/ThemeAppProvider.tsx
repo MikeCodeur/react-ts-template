@@ -22,6 +22,6 @@ const ThemeAppProvider = ({children}: ThemeAppProviderTypes) => {
       defaultProps: theme,
     }),
   )
-  return <ChakraProvider theme={customTheme}>{children}</ChakraProvider>
+  return <ChakraProvider theme={theme}>{children}</ChakraProvider>
 }
 export {ThemeAppProvider}

@@ -23,7 +23,7 @@ import {
   grid4,
   grid6,
 } from '../commons/constantes'
-
+import {theme as HyperTheme} from '../theme'
 const wrapColorsChakra = {
   '#3182CE': 'blue',
   '#E53E3E': 'red',
@@ -227,7 +227,7 @@ export const Exemple = () => {
           Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
         </Button>
         <Button onClick={() => setTheme(ThemeUseKevin)}>Theme Kevin</Button>
-        <Button onClick={() => setTheme(ThemeUserMike)}>Theme Mike</Button>
+        <Button onClick={() => setTheme(HyperTheme)}>Theme Mike</Button>
 
         <Button>Par default</Button>
         <Button variant="solid">solid</Button>

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import {ThemeDefault, ThemeUserMike, ThemeUseKevin} from '../commons/constantes'
-
+//import {ThemeDefault, ThemeUserMike, ThemeUseKevin} from '../commons/constantes'
+import {theme as HyperTheme} from '../theme'
 export type ThemeContextStore = {
   theme: any
   setTheme: (theme: any) => void
@@ -25,7 +25,7 @@ const useSetTheme = () => {
 }
 
 const ThemeProvider = (props: React.PropsWithChildren<{}>) => {
-  const [theme, setTheme] = React.useState(ThemeDefault)
+  const [theme, setTheme] = React.useState(HyperTheme)
   const value = {theme, setTheme}
   return <ThemeContext.Provider value={value} {...props} />
 }

@@ -8,7 +8,7 @@ import {
 import {useAppTheme, useSetTheme} from '../../../context/ThemeContext'
 import {useAuth} from '../../../context/AuthContext'
 import {useColorMode} from '@chakra-ui/react'
-
+import {theme as HyperTheme} from '../../../theme'
 export const ExempleA = () => {
   const {theme, setTheme: updateThemeStore} = useAppTheme()
   const setTheme = useSetTheme()
@@ -26,7 +26,7 @@ export const ExempleA = () => {
           Theme Par default
         </Button>
         <Button onClick={() => setTheme(ThemeUseKevin)}>Theme Kevin</Button>
-        <Button onClick={() => setTheme(ThemeUserMike)}>Theme Mike</Button>
+        <Button onClick={() => setTheme(HyperTheme)}>Theme Mike</Button>
       </Stack>
     </>
   )
