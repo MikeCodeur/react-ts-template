@@ -33,12 +33,12 @@ export const LoginForm = () => {
       </Heading>
       <Stack direction="row" spacing={12} align="center" mt={5}>
         <Button variant="ghost">
-          <AiFillLinkedin color="black" />
+          <AiFillLinkedin />
         </Button>
-        <Button variant="ghost" color="black">
+        <Button variant="ghost">
           <AiFillGoogleCircle />
         </Button>
-        <Button variant="ghost" color="black">
+        <Button variant="ghost">
           <LinkIcon />
         </Button>
       </Stack>

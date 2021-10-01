@@ -9,7 +9,7 @@ import {
   Hidden,
   Flex,
 } from '../components/ui'
-import {useTheme} from '@chakra-ui/system'
+import {useTheme, useColorMode} from '@chakra-ui/system'
 import {LoginForm} from '../components/form/LoginForm'
 import {Exemple} from '../pages/Exemple'
 const grid_left = {
@@ -32,6 +32,7 @@ const grid_right = {
 export const Login = () => {
   const theme = useTheme()
   //return <Exemple />
+  const {colorMode, toggleColorMode} = useColorMode()
   return (
     <ContainerPage>
       <Flex h={'100vh'} justifyContent="center">
@@ -53,7 +54,7 @@ export const Login = () => {
                 justifyContent="center"
                 alignContent="center"
                 alignItems="center"
-                borderWidth="1px"
+                borderWidth={colorMode === 'dark' ? '0px' : '1px'}
                 borderLeftRadius="lg"
               >
                 <Heading
@@ -78,9 +79,11 @@ export const Login = () => {
               </Box>
             </Col>
           </Hidden>
-          <Col grid={grid_right} bg="green">
+          <Col grid={grid_right}>
             <Flex
-              boxShadow="xs"
+              boxShadow={colorMode === 'dark' ? 'none' : 'xs'}
+              borderTopWidth="1px"
+              borderBottomWidth="1px"
               borderRightWidth="1px"
               borderRightRadius="lg"
               h={600}
