@@ -11,6 +11,9 @@ export const ContainerPage = styled.div`
   min-height: ${minHeight};
 `
 
+// export const ContainerPage = ({...rest}: ContainerProps) => {
+//   return <ChakaraContainer maxWidth={sizes?.xl} {...rest}></ChakaraContainer>
+// }
 export const Container = ({...rest}: ContainerProps) => {
   return <ChakaraContainer {...rest}></ChakaraContainer>
 }

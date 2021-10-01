@@ -1,5 +1,10 @@
 import * as React from 'react'
-import {ChakraProvider, extendTheme, withDefaultProps} from '@chakra-ui/react'
+import {
+  ChakraProvider,
+  extendTheme,
+  withDefaultProps,
+  withDefaultSize,
+} from '@chakra-ui/react'
 import {useAppTheme} from '../context/ThemeContext'
 
 type ThemeAppProviderTypes = {
