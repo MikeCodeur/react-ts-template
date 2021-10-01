@@ -2,7 +2,7 @@ import * as React from 'react'
 import {
   Heading,
   Text,
-  Container as ContainerPage,
+  ContainerPage,
   Box,
   Row,
   Col,
@@ -34,9 +34,9 @@ export const Login = () => {
   //return <Exemple />
   return (
     <ContainerPage>
-      <Box h={'100vh'} w={'100%'}>
+      <Flex h={'100vh'} justifyContent="center">
         <Row
-          style={{height: '100%'}}
+          style={{height: '100%', width: '1024px'}}
           align="center"
           justify="center"
           direction="row"
@@ -91,7 +91,7 @@ export const Login = () => {
             </Flex>
           </Col>
         </Row>
-      </Box>
+      </Flex>
     </ContainerPage>
   )
 }

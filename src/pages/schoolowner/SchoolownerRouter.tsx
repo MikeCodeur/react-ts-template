@@ -2,11 +2,15 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import {ExempleA} from './ExempleA'
 import {AuthAppTemplate} from '../../components/templates/AuthAppTemplate'
-export const CoachRouter = () => {
+import {Dashboard} from '../schoolowner/Dashboard'
+export const SchoolownerRouter = () => {
   return (
     <AuthAppTemplate>
       <Switch>
-        <Route path={'/coach/exemple-A'}>
+        <Route path={'/schoolowner/dashboard'}>
+          <Dashboard />
+        </Route>
+        <Route path={'/schoolowner/exemple-A'}>
           <ExempleA />
         </Route>
       </Switch>

@@ -18,7 +18,7 @@ export const ExempleA = () => {
   const [editColors, setEditColors] = React.useState(false)
   return (
     <>
-      <h1>Page exemple A Routage du Coach </h1>
+      <h1>Page exemple A Routage du Schoolowner </h1>
       <Stack direction="row" spacing={4} align="center" mt={20}>
         <Button onClick={toggleColorMode}>
           Toggle {colorMode === 'light' ? 'Dark' : 'Light'}

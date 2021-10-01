@@ -10,7 +10,7 @@ const config = {
 }
 
 export const theme = {
-  colorScheme: 'blue',
+  colorScheme: 'teal',
   direction,
   ...foundations,
   config,

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import {CoachRouter} from './coach/CoachRouter'
+import {SchoolownerRouter} from './schoolowner/SchoolownerRouter'
 import {StudentRouter} from './students/StudentRouter'
 import {About} from './public/About'
 import {Error404} from './Error404'
@@ -24,7 +24,7 @@ export const RouterPages: React.FunctionComponent<{}> = () => {
           <About />
         </Route>
         {/*  ZONE PRIVÉ  SOUS-ROUTER  */}
-        <PrivateRoute path="/coach" component={CoachRouter} />
+        <PrivateRoute path="/schoolowner" component={SchoolownerRouter} />
         <PrivateRoute path="/student" component={StudentRouter} />
         <Route path="*">
           <Error404 />

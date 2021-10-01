@@ -41,7 +41,7 @@ async function getUserByToken() {
 
 const AuthProvider = (props: React.PropsWithChildren<{}>) => {
   const [authUser, setAuthUser] = React.useState<IUser | null>()
-  const fakeUser = {token: 'fake', roles: ['COACH', 'STUDENT']}
+  const fakeUser = {token: 'fake', roles: ['SCHOOLOWNER', 'STUDENT']}
   const login = React.useCallback(
     data => setAuthUser({...fakeUser, username: data.username}),
     [setAuthUser],

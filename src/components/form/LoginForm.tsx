@@ -23,7 +23,7 @@ export const LoginForm = () => {
   }
   const onSubmit = async (formValues?: FormValues) => {
     await login({username: 'mike'})
-    history.push('/coach/exemple-A')
+    history.push('/schoolowner/dashboard')
   }
 
   return (
