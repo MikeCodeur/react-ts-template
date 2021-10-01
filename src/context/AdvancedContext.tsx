@@ -1,25 +1,8 @@
 import * as React from 'react'
+// https://kentcdodds.com/blog/how-to-use-react-context-effectively
 
 // exemple de contexte avancé avec reducer / Callback / memo
 // exemple pris de Netflix gestion des series / movies
-
-//type pout le contexte
-export type AdvancedContextStore = {
-  movies: any
-  series: any
-  addMovie: (data: IMovie) => void
-  addSerie: (data: IMovie) => void
-  clearHistory: () => void
-}
-
-/* Declaration du contexte*/
-const AdvancedContext = React.createContext<AdvancedContextStore>({
-  movies: {},
-  series: {},
-  addMovie: () => {}, // To be implemented in provider
-  addSerie: () => {}, // To be implemented in provider
-  clearHistory: () => {}, // To be implemented in provider
-})
 
 interface IMovie {
   id: string
@@ -36,6 +19,28 @@ type Action =
   | {type: 'addMovie'; payload: any}
   | {type: 'addSerie'; payload: any}
   | {type: 'clear'}
+
+type Dispatch = (action: Action) => void
+
+//type pout le contexte
+export type AdvancedContextStore = {
+  movies: any
+  series: any
+  addMovie: (data: IMovie) => void
+  addSerie: (data: IMovie) => void
+  clearHistory: () => void
+  dispatch: Dispatch
+}
+
+/* Declaration du contexte*/
+const AdvancedContext = React.createContext<AdvancedContextStore>({
+  movies: {},
+  series: {},
+  addMovie: () => {}, // To be implemented in provider
+  addSerie: () => {}, // To be implemented in provider
+  clearHistory: () => {}, // To be implemented in provider
+  dispatch: () => {}, // To be implemented in provider
+})
 
 const reducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -60,10 +65,10 @@ const reducer = (state: State, action: Action) => {
   }
 }
 
-const useAuth = () => {
+const useAdvanced = () => {
   const context = React.useContext(AdvancedContext)
   if (!context) {
-    throw new Error("useAuth() s'utilise avec <AuthContext.provider>")
+    throw new Error("useAdvanced() s'utilise avec <AdvancedContext.provider>")
   }
   return context
 }
@@ -97,10 +102,11 @@ const AuthProvider = (props: React.PropsWithChildren<{}>) => {
       addMovie,
       addSerie,
       clearHistory,
+      dispatch,
     }),
-    [addMovie, addSerie, clearHistory, movies, series],
+    [addMovie, addSerie, clearHistory, movies, series, dispatch],
   )
   return <AdvancedContext.Provider value={value} {...props} />
 }
 
-export {AdvancedContext as AuthContext, useAuth, AuthProvider}
+export {AdvancedContext as AuthContext, useAdvanced, AuthProvider}
