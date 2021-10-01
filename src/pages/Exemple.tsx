@@ -23,6 +23,7 @@ import {
   grid4,
   grid6,
 } from '../commons/constantes'
+import {Button as ChakraButton, ButtonProps} from '@chakra-ui/react'
 import {theme as HyperTheme} from '../theme'
 const wrapColorsChakra = {
   '#3182CE': 'blue',
@@ -227,7 +228,9 @@ export const Exemple = () => {
           Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
         </Button>
         <Button onClick={() => setTheme(ThemeUseKevin)}>Theme Kevin</Button>
-        <Button onClick={() => setTheme(HyperTheme)}>Theme Mike</Button>
+        <ChakraButton onClick={() => setTheme(HyperTheme)}>
+          Theme Mike
+        </ChakraButton>
 
         <Button>Par default</Button>
         <Button variant="solid">solid</Button>
