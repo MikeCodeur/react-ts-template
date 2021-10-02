@@ -36,8 +36,9 @@ const typography = {
     black: '900',
   },
   fonts: {
-    heading: 'Work Sans, system-ui, sans-serif',
-    body: 'Inter, system-ui, sans-serif',
+    heading:
+      'Futura,Century Gothic,sans-serif,Work Sans, system-ui, sans-serif',
+    body: 'Futura,Century Gothic,Inter, system-ui, sans-serif',
     mono: 'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
   },
   fontSizes: {
