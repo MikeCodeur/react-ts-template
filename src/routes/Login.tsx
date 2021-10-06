@@ -11,9 +11,8 @@ import {
 } from '../components/ui'
 import {useTheme, useColorMode} from '@chakra-ui/system'
 import {LoginForm} from '../components/form/LoginForm'
-import SplitScreen from '../components/form/SplitScreen'
-import SimpleCard from '../components/form/SimpleLoginCard'
-import {Exemple} from '../pages/Exemple'
+import {SplitScreen} from '../components/SplitScreen'
+import {SimpleCard} from '../components/SimpleLoginCard'
 const grid_left = {
   xs: 12,
   sm: 12,
@@ -92,8 +91,7 @@ export const Login = () => {
               alignItems="center"
               justifyContent="center"
             >
-              <SimpleCard />
-              {/* <LoginForm /> */}
+              <LoginForm />
             </Flex>
           </Col>
         </Row>

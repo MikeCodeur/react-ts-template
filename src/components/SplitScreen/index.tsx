@@ -17,7 +17,7 @@ type FormValues = {
   email: string
   password: string
 }
-export default function SplitScreen() {
+export const SplitScreen = () => {
   const history = useHistory()
   const {login, register, logout, authUser} = useAuth()
 
@@ -71,3 +71,5 @@ export default function SplitScreen() {
     </Stack>
   )
 }
+
+export default SplitScreen

@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {ErrorBoundary} from 'react-error-boundary'
 import ErrorFallback from './components/ErrorFallback'
-import {RouterPages} from './pages'
+import {RouterPages} from './routes'
 import {AppProviders} from './context/'
 
 export const App = () => {

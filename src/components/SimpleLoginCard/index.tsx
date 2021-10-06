@@ -19,7 +19,7 @@ type FormValues = {
   password: string
 }
 
-export default function SimpleCard() {
+export const SimpleCard = () => {
   const history = useHistory()
   const {login, register, logout, authUser} = useAuth()
 
@@ -84,3 +84,5 @@ export default function SimpleCard() {
     </Flex>
   )
 }
+
+export default SimpleCard
