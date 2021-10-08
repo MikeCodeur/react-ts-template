@@ -31,7 +31,7 @@ const useAuth = () => {
 async function getUserByToken() {
   let user = null
   user = {username: 'Fake', token: 'FakeToken', roles: ['admin', 'user']}
-  // const token = await authNetflix.getToken()
+  // const token = await provider.getToken()
   // if (token) {
   //   const data = await clientAuth('me', {token})
   //   user = data.data.user
@@ -41,13 +41,24 @@ async function getUserByToken() {
 
 const AuthProvider = (props: React.PropsWithChildren<{}>) => {
   const [authUser, setAuthUser] = React.useState<IUser | null>()
-  const fakeUser = {token: 'fake', roles: ['SCHOOLOWNER', 'STUDENT']}
+  //mock : simple user and admin for roles
+  const fakeUser = {token: 'fake', roles: ['ADMIN', 'USER']}
   const login = React.useCallback(
-    data => setAuthUser({...fakeUser, username: data.username}),
+    data =>
+      setAuthUser({
+        ...fakeUser,
+        username: data.username,
+        roles: data.username === 'admin' ? ['ADMIN', 'USER'] : ['USER'],
+      }),
     [setAuthUser],
   )
   const register = React.useCallback(
-    data => setAuthUser({...fakeUser, username: data.username}),
+    data =>
+      setAuthUser({
+        ...fakeUser,
+        username: data.username,
+        roles: data.username === 'admin' ? ['ADMIN', 'USER'] : ['USER'],
+      }),
     [setAuthUser],
   )
   const logout = React.useCallback(() => setAuthUser(null), [setAuthUser])

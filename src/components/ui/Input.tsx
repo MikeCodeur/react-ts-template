@@ -38,7 +38,11 @@ export const FormInput = ({...props}: FormInputProps) => {
   return (
     <FormControl id={props?.id}>
       <FormLabel>{props?.label}</FormLabel>
-      <Input placeholder={props?.placeholder} type={props?.type} />
+      <Input
+        placeholder={props?.placeholder}
+        type={props?.type}
+        value={props?.value}
+      />
       <FormHelperText>{props?.text}</FormHelperText>
     </FormControl>
   )

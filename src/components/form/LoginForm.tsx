@@ -22,8 +22,11 @@ export const LoginForm = () => {
     password: string
   }
   const onSubmit = async (formValues?: FormValues) => {
-    await login({username: 'mike'})
-    history.push('/admin/dashboard')
+    login({
+      username: formValues?.email as string,
+      password: formValues?.password as string,
+    })
+    history.push('/user/dashboard')
   }
 
   return (
@@ -62,11 +65,11 @@ export const LoginForm = () => {
         <Flex width={'100%'} justifyContent="center" mt={5}>
           <Button
             onClick={() => {
-              onSubmit()
+              onSubmit({email: 'admin', password: ''})
             }}
             variant="solid"
           >
-            Connexion
+            Connexion Admin
           </Button>
         </Flex>
       </Box>

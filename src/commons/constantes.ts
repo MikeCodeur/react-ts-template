@@ -1,3 +1,6 @@
+export const roleUser = 'USER'
+export const roleAdmin = 'ADMIN'
+
 export const sizes = {
   xs: 0,
   sm: '480px',
