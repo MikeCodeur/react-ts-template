@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Simple React TS (CRA) Api context -  ReactQuery - Chakra-ui
 
-This project was bootstrapped with
+## Problem
+Need start many projets with React TS (CRA) Api context Chakra-ui and structure folder
+
+## Solution
+A template with all the structure configured
+
+##  This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -53,6 +59,109 @@ small and middle deployments, and you shouldn’t feel obligated to use this
 feature. However we understand that this tool wouldn’t be useful if you couldn’t
 customize it when you are ready for it.
 
+# Hiérarchie à suivre sur le projet
+
+### Répertoire : `script`
+
+Scripts utiles pour le fonctionnement du projet
+
+- build / pre-commit etc ...
+
+### Répertoire : `src`
+
+Racine du projet
+
+- contient uniquement `App.tsx`
+- `setupTests.ts`
+- et fichiers de configurations
+- aucun autre composant doit être créer ici
+
+### Répertoire : `src/__tests__`
+
+Ici les tests unitaire lié à l'app  ( **non** **réutilisable** )
+
+- répertoire contenant les tests unitaires
+
+### Répertoire : `src/context`
+
+contient tout les fichier de l'api context
+
+- les hooks nécessaires aux contexte
+
+### Répertoire : `src/utils`
+
+Helpers / Utils Si **non réutilisable** dans autre app
+
+Si réutilisable sur autre app (react-native ou autres) alors mettre dans common sinon ici ! 
+
+- contiens tous les helpers
+- et les hooks customisés
+
+### Répertoire : `src/common`
+
+ Contient le code Général de l'app   ( **réutilisable** ) toujours penser Si je met mon code sur un autre projet ça doit marcher ! Demain tu lance app mobile tu prend tu colle ça marche comme un module npm. 
+
+- `src/common/constantes` constantes générique
+- `src/common/utils/` Les utils / helpers.
+- `src/common/api/`
+    - `/clients` fonctions call api  exemple  :  login()
+    - `/GraphQl/`  pour les const générer par graphQL et autres  ps : a voir
+    - `/hooks/` les hooks avec logic **SIMPLE**  lié aux API exemple : useLogin()
+- `src/common/__tests__/` Tests unitaire du common
+
+### Répertoire : `src/components`
+
+composants react
+
+- `/icons`  Composant qui retourne icon svg , *peut etre pas utilisé dans ce projet*
+- `/ui` Uniquement les composants lié aux design simple ex: <Button>
+- `MonComposant/index.tsx/` Composant composé de plusieurs autres
+- `index.ts` fichier qui export * from `import { MonCompo } from '/components'`
+
+### Répertoire : `src/forms`
+
+Ici uniquement les formulaire réutilisable exemple  `input + output` pas de call api dedans
+
+- `/partials` des morceaux de form ex : `<AddressForm/>` qui peut être utilisé dans autre form
+- `/school/` Si bcp de form regrouper par groupes
+
+### Répertoire : `src/modals`
+
+Ici toutes les modal ( popup )  réutilisables , exemple : popup de confirmation de sauvegarde ou avertissement évite de recoder la logic de la modal open/close etc...
+
+- À la racine créer 1 composant de gestion des modal comme <Dialog /> de material les autre modal utilise ce composant si demain on change de system de modal on change 1 fichier.
+- `/school/` Si bcp de modals regrouper par groupes
+- Une modal peut contenir un form  des composant etc..
+
+### Répertoire : `src/hooks`
+
+Les hooks lié à cette app front web seulement ( **non réutilisable** ) 
+
+- Par exemple un hook useShowMessage  contrairement au hook de /common on peut pas le reprendre.
+- `/src/hooks/school`
+- `/src/hooks/studient`
+
+### Répertoire : `src/routes`
+
+Ici les Routes ( voir si on renomme en routes ) 
+
+- `/sous-router` Ce dossier contient 1 index.tsx qui va lui avoir les routes ex `<SchoolsownerRoutes/>`
+
+### Répertoire : `src/theme`
+
+ne pas modifier ou ajouter des fichiers dedans car il seront écraser par le code générer par `hyperTheme`
+
+- contient le thème de `charka ui`
+- 
+
+### Répertoire : `src/types`
+
+Certaines lib ne propose pas les types on peut les recréer ici pour quelle soit utilisé partout.  `MesTypes.d.ts` d.ts pour qu'ils soit global
+
+- Éviter les libs sans les types mais parfois pas le choix  donc on rajoute les types
+- 
+
+[]() 
 ## Learn More
 
 You can learn more in the

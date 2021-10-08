@@ -11,8 +11,6 @@ import {
 } from '../components/ui'
 import {useTheme, useColorMode} from '@chakra-ui/system'
 import {LoginForm} from '../components/form/LoginForm'
-import {SplitScreen} from '../components/SplitScreen'
-import {SimpleCard} from '../components/SimpleLoginCard'
 const grid_left = {
   xs: 12,
   sm: 12,
@@ -33,7 +31,7 @@ const grid_right = {
 export const Login = () => {
   const theme = useTheme()
   //return <Exemple />
-  const {colorMode, toggleColorMode} = useColorMode()
+  const {colorMode} = useColorMode()
   return (
     <ContainerPage>
       <Flex h={'100vh'} justifyContent="center">

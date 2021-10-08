@@ -1,10 +1,5 @@
 import * as React from 'react'
-import {
-  ChakraProvider,
-  extendTheme,
-  withDefaultProps,
-  withDefaultSize,
-} from '@chakra-ui/react'
+import {ChakraProvider, extendTheme, withDefaultProps} from '@chakra-ui/react'
 import {useAppTheme} from '../context/ThemeContext'
 
 type ThemeAppProviderTypes = {
@@ -16,10 +11,6 @@ const ThemeAppProvider = ({children}: ThemeAppProviderTypes) => {
     initialColorMode: 'light',
     useSystemColorMode: false,
   }
-  // MODIFIE INDIVIDUELLEMENT CHAQUE COMPO
-  // const customTheme = extendTheme({...theme, config});
-
-  // MODIFIE LE THEME GENERAL
   const customTheme = extendTheme(
     {...theme},
     config,

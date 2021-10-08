@@ -1,13 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react'
-import {
-  Stack,
-  Heading,
-  Flex,
-  Box,
-  Link,
-  Button,
-  FormInput,
-} from '../../components/ui'
+import {Stack, Heading, Flex, Box, Button, FormInput} from '../../components/ui'
 import {AiFillLinkedin, AiFillGoogleCircle} from 'react-icons/ai'
 import {LinkIcon} from '@chakra-ui/icons'
 import {useAuth} from '../../context/AuthContext'
@@ -65,11 +58,11 @@ export const LoginForm = () => {
         <Flex width={'100%'} justifyContent="center" mt={5}>
           <Button
             onClick={() => {
-              onSubmit({email: 'admin', password: ''})
+              onSubmit({email: 'user', password: ''})
             }}
             variant="solid"
           >
-            Connexion Admin
+            Connexion
           </Button>
         </Flex>
       </Box>

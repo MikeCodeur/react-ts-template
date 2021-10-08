@@ -1,6 +1,6 @@
 import React from 'react'
 import {Heading as HeadingChakra, HeadingProps} from '@chakra-ui/react'
-import {useTheme, css} from '@emotion/react'
+import {css} from '@emotion/react'
 import styled from '@emotion/styled'
 import {useAppTheme} from '../../context/ThemeContext'
 // Surcharge du Compo Text de Chakra avec @emotion

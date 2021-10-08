@@ -1,5 +1,5 @@
 import React from 'react'
-import {Redirect, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import {ExempleB} from './ExempleB'
 import {UserDashboard} from './UserDashboard'
 import {AuthAppTemplate} from '../../components/templates/AuthAppTemplate'
