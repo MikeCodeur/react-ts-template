@@ -1,6 +1,6 @@
 import React from 'react'
 //import {Link} from '../components/ui'
-import {Link as DomRouterLink} from 'react-router-dom'
+import {Link as DomRouterLink, useHistory} from 'react-router-dom'
 import {
   Box,
   Flex,
@@ -29,9 +29,14 @@ import {
 import {useAuth} from '../context/AuthContext'
 
 export const AppBar = () => {
+  const history = useHistory()
   const {isOpen, onToggle} = useDisclosure()
   const {login, register, logout, authUser} = useAuth()
   const {colorMode, toggleColorMode} = useColorMode()
+  const handleLogout = () => {
+    logout()
+    history.push('/')
+  }
   return (
     <Box>
       <Flex
@@ -91,7 +96,7 @@ export const AppBar = () => {
             fontSize={'sm'}
             fontWeight={400}
             variant={'ghost'}
-            onClick={() => logout()}
+            onClick={handleLogout}
           >
             Deconnexion
           </Button>

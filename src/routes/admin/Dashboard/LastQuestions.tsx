@@ -150,7 +150,7 @@ export const LastQuestions = () => {
           fontWeight={'bold'}
           color={useColorModeValue('gray.700', 'gray.50')}
         >
-          Les dernières questions
+          Les dernières questions (admin)
         </chakra.h1>
         <chakra.h2
           margin={'auto'}
