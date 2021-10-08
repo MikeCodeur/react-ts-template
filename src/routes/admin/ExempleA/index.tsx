@@ -1,10 +1,6 @@
 import React from 'react'
 import {Button, Stack} from '../../../components/ui'
-import {
-  ThemeUserMike,
-  ThemeUseKevin,
-  ThemeDefault,
-} from '../../../commons/constantes'
+
 import {useAppTheme, useSetTheme} from '../../../context/ThemeContext'
 import {useAuth} from '../../../context/AuthContext'
 import {useColorMode} from '@chakra-ui/react'
@@ -23,10 +19,8 @@ export const ExempleA = () => {
         <Button onClick={toggleColorMode}>
           Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
         </Button>
-        <Button onClick={() => setTheme(ThemeDefault)}>
-          Theme Par default
-        </Button>
-        <Button onClick={() => setTheme(ThemeUseKevin)}>Theme Kevin</Button>
+        <Button onClick={() => setTheme(null)}>Theme Par default</Button>
+        <Button onClick={() => setTheme(null)}>Theme Kevin</Button>
         <ChakraButton onClick={() => setTheme(HyperTheme)}>
           Theme Mike
         </ChakraButton>

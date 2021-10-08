@@ -1,5 +1,4 @@
 import * as React from 'react'
-//import {ThemeDefault, ThemeUserMike, ThemeUseKevin} from '../commons/constantes'
 import {theme as HyperTheme} from '../theme'
 export type ThemeContextStore = {
   theme: any

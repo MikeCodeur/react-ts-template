@@ -23,7 +23,7 @@ export const SplitScreen = () => {
 
   const onSubmit = async (formValues?: FormValues) => {
     await login({username: 'mike'})
-    history.push('/schoolowner/dashboard')
+    history.push('/admin/dashboard')
   }
   return (
     <Stack minH={'100vh'} direction={{base: 'column', md: 'row'}}>

@@ -7,7 +7,7 @@ export const StudentRouter = () => {
   return (
     <AuthAppTemplate>
       <Switch>
-        <Route component={ExempleB} path={'/student/exemple-B'} />
+        <Route component={ExempleB} path={'/users/exemple-B'} />
       </Switch>
     </AuthAppTemplate>
   )

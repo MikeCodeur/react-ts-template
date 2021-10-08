@@ -65,7 +65,7 @@ export const Login = () => {
                   colorScheme="white"
                   size="lg"
                 >
-                  Welcome Back
+                  Mike Codeur Template
                 </Heading>
                 <Text
                   textAlign="center"
@@ -73,9 +73,8 @@ export const Login = () => {
                   variant="p"
                   colorScheme="white"
                 >
-                  Hébergez un nombre illimité de fichiers et de vidéos, proposez
-                  des plans de paiement, des ventes incitatives, des quiz, du
-                  contenu au goutte-à-goutte et des commentaires d’étudiants.
+                  Template basé sur React CRA TS API context / chakra ui Eslint
+                  Prettier strict - React Query
                 </Text>
               </Box>
             </Col>

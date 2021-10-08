@@ -15,14 +15,7 @@ import {BlockPicker} from 'react-color'
 import {useAppTheme, useSetTheme} from '../context/ThemeContext'
 import {useAuth} from '../context/AuthContext'
 import {useColorMode} from '@chakra-ui/react'
-import {
-  ThemeUserMike,
-  ThemeUseKevin,
-  grid1,
-  grid2,
-  grid4,
-  grid6,
-} from '../commons/constantes'
+import {grid1, grid2, grid4, grid6} from '../commons/constantes'
 import {Button as ChakraButton, ButtonProps} from '@chakra-ui/react'
 import {theme as HyperTheme} from '../theme'
 const wrapColorsChakra = {
@@ -227,7 +220,7 @@ export const Exemple = () => {
         <Button onClick={toggleColorMode}>
           Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
         </Button>
-        <Button onClick={() => setTheme(ThemeUseKevin)}>Theme Kevin</Button>
+        <Button onClick={() => setTheme(null)}>Theme Kevin</Button>
         <ChakraButton onClick={() => setTheme(HyperTheme)}>
           Theme Mike
         </ChakraButton>

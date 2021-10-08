@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import {SchoolownerRouter} from './schoolowner/SchoolownerRouter'
-import {StudentRouter} from './students/StudentRouter'
+import {SchoolownerRouter} from './admin/AdminRouter'
+import {StudentRouter} from './students/UsersRouter'
 import {About} from './public/About'
 import {Error404} from './Error404'
 import {PrivateRoute} from '../components/PrivateRoute'
@@ -23,9 +23,8 @@ export const RouterPages: React.FunctionComponent<{}> = () => {
         <Route path="/about">
           <About />
         </Route>
-        {/*  ZONE PRIVÉ  SOUS-ROUTER  */}
-        <PrivateRoute path="/schoolowner" component={SchoolownerRouter} />
-        <PrivateRoute path="/student" component={StudentRouter} />
+        <PrivateRoute path="/admin" component={SchoolownerRouter} />
+        <PrivateRoute path="/user" component={StudentRouter} />
         <Route path="*">
           <Error404 />
         </Route>

@@ -25,7 +25,7 @@ export const SimpleCard = () => {
 
   const onSubmit = async (formValues?: FormValues) => {
     await login({username: 'mike'})
-    history.push('/schoolowner/dashboard')
+    history.push('/admin/dashboard')
   }
   return (
     <Flex
